@@ -2,6 +2,14 @@
 @model M05_UF3_P2_Template.Pages.Products.ProductModel
 @using M05_UF3_P2_Template.App_Code.Model
 @{
+    if (Model.Id > 0)
+    {
+        ViewData["Title"] = "Product - " + Model.product.Type;
+    }
+    else
+    {
+        ViewData["Title"] = "Product - Create";
+    }
 }
 
 <form method="post">

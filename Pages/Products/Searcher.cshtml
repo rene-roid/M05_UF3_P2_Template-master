@@ -2,6 +2,7 @@
 @model M05_UF3_P2_Template.Pages.Products.SearcherModel
 @using M05_UF3_P2_Template.App_Code.Model
 @{
+    ViewData["Title"] = "Product searcher";
 }
 
 <a class="btn btn-primary float-right" asp-page="/Products/Product" title="Add product">
@@ -20,6 +21,7 @@
             <th></th>
         </tr>
     </thead>
+    
     <tbody>
         @foreach (Product item in Model.products)
         {
