@@ -1,0 +1,68 @@
+﻿@page
+@model M05_UF3_P2_Template.Pages.Products.SearcherModel
+@using M05_UF3_P2_Template.App_Code.Model
+@{
+}
+
+<a class="btn btn-primary float-right" asp-page="/Products/Product" title="Add product">
+    <span class="material-icons text-white">add</span>
+</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Publishing</th>
+            <th>Size</th>
+            <th>Developer</th>
+            <th>Editor</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Product item in Model.products)
+        {
+            <tr>
+                <td>
+                    @if (item.Type == Product.TYPE.GAME)
+                    {
+                        <span class="material-icons">
+                            sports_esports
+                        </span>
+                    }
+                    else
+                    {
+                        <span class="material-icons">
+                            question_mark
+                        </span>
+                    }
+                </td>
+                <td>@item.Summary</td>
+                <td>@item.Price.ToString("0.00")€</td>
+                <td>@item.Publishing.ToShortDateString()</td>
+                <td>@item.Size.ToString("0.0")Gb</td>
+                <td>
+                    @if (item.Developer != null)
+                    {
+                        <a asp-page="/Companies/Company" asp-route-id="@item.Developer.Id">@item.Developer.Name</a>
+                    }
+                </td>
+                <td>
+                    @if (item.Editor != null)
+                    {
+                        <a asp-page="/Companies/Company" asp-route-id="@item.Editor.Id">@item.Editor.Name</a>
+                    }
+                </td>
+                <td>
+                    <form asp-page-handler="delete" asp-route-id="@item.Id" method="post">
+                        <a class="btn btn-primary" asp-page="/Products/Product" asp-route-id="@item.Id" title="View product">
+                            <span class="material-icons text-white">visibility</span>
+                        </a>
+                        <button class="btn btn-danger"><span class="material-icons text-white">delete</span></button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
