@@ -14,12 +14,75 @@
 
 <form method="post">
     <button type="submit" class="btn btn-primary float-right"><span class="material-icons">save</span></button>
-    <input type="text" asp-for="product.Summary" />
+@*    <input type="text" asp-for="product.Summary" />
     <input type="number" step="any" asp-for="product.Price" />
     <input type="number" asp-for="product.Developer_id" />
-    <input type="number" asp-for="product.Editor_id" />
+    <input type="number" asp-for="product.Editor_id" />*@
 
     <a class="btn btn-primary float-right" asp-page="/Products/Game" asp-route-id="@Model.Game_Id" title="Edit game">
         <span class="material-icons text-white">edit</span>
     </a>
+
+                <div class="card-body">
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="Company_Id_Input col-sm-2 col-form-label"><span class="material-icons mx-1" style="font-size: 1rem;">tag</span>Id</label>
+                    @{
+                        string CustomId = Model.Id > 0 ? Model.Id.ToString() : null;
+                    }
+                    <input type="text" asp-for="product.Id" value="@CustomId" readonly class="form-control" id="Company_Id_Input" placeholder="-">
+                </div>
+                <div class="form-group col-md-5">
+                    <label for="Company_Name_Input col-sm-2 col-form-label">Summary</label>
+                    <input type="text" asp-for="product.Summary" maxlength="50" class="form-control" placeholder="Summary">
+                </div>
+                                <div class="form-group col-md-2">
+                    <label for="Company_Id_Input col-sm-2 col-form-label"><span class="material-icons mx-1" style="font-size: 1rem;">tag</span>Price</label>
+
+                    <input type="number" step="any" asp-for="product.Price" class="form-control" id="Company_Id_Input" placeholder="-">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md">
+                    <label for="Company_Icon_Input col-sm-2 col-form-label"><span class="material-icons mx-1" style="font-size: 1rem;">image</span>Icon</label>
+                    <input type="url" asp-for="product.Icon" class="form-control" id="Company_Icon_Input" placeholder="domain.com/icon.png">
+                </div>
+                <div class="form-group col-md">
+                    <label for="Company_Icon_Input col-sm-2 col-form-label"><span class="material-icons mx-1" style="font-size: 1rem;">image</span>Banner</label>
+                    <input type="url" asp-for="product.Banner" class="form-control" id="Company_Icon_Input" placeholder="domain.com/image.png">
+                </div>
+                <div class="form-group col-md">
+                    <label for="Company_Icon_Input col-sm-2 col-form-label"><span class="material-icons mx-1" style="font-size: 1rem;">image</span>Trailer</label>
+                    <input type="url" asp-for="product.Trailer" class="form-control" id="Company_Icon_Input" placeholder="domain.com/image.png">
+                </div>
+@*                <div class="form-group col-md-1">
+                    <label for="Company_IconColor_Input col-sm-2 col-form-label"><span class="material-icons mx-1" style="font-size: 1rem;">palette</span>Icon Background</label>
+                    <input type="color" asp-for="product.Publishing" class="form-control" id="Company_IconColor_Input" placeholder="FFFFFF">
+                </div>*@
+                
+            </div>
+
+                        <div class="form-row">
+                <div class="form-group col-md">
+                    <label for="Company_Icon_Input col-sm-2 col-form-label"><span class="material-icons mx-1" style="font-size: 1rem;">image</span>Publishing</label>
+                    <input type="url" asp-for="product.Publishing" class="form-control" id="Company_Icon_Input" placeholder="domain.com/icon.png">
+                </div>
+                <div class="form-group col-md">
+                    <label for="Company_Icon_Input col-sm-2 col-form-label"><span class="material-icons mx-1" style="font-size: 1rem;">image</span>Developer</label>
+                    <input type="url" asp-for="product.Developer" class="form-control" id="Company_Icon_Input" placeholder="domain.com/image.png">
+                </div>
+                <div class="form-group col-md">
+                    <label for="Company_Icon_Input col-sm-2 col-form-label"><span class="material-icons mx-1" style="font-size: 1rem;">image</span>Editor</label>
+                    <input type="url" asp-for="product.Editor" class="form-control" id="Company_Icon_Input" placeholder="domain.com/image.png">
+                </div>
+
+                                                <div class="form-group col-md-2">
+                    <label for="Company_Id_Input col-sm-2 col-form-label"><span class="material-icons mx-1" style="font-size: 1rem;">tag</span>Size</label>
+
+                    <input type="number" step="any" asp-for="product.Size" class="form-control" id="Company_Id_Input" placeholder="-">
+                </div>
+                
+            </div>
+        </div>
 </form>
