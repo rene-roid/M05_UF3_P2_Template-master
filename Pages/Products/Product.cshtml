@@ -64,17 +64,17 @@
             </div>
 
                         <div class="form-row">
-                <div class="form-group col-md">
-                    <label for="Company_Icon_Input col-sm-2 col-form-label"><span class="material-icons mx-1" style="font-size: 1rem;">image</span>Publishing</label>
-                    <input type="url" asp-for="product.Publishing" class="form-control" id="Company_Icon_Input" placeholder="domain.com/icon.png">
+                <div class="form-group col-md-5">
+                    <label for="Company_Name_Input col-sm-2 col-form-label"><span class="material-icons mx-1" style="font-size: 1rem;">image</span>Publishing</label>
+                    <input type="datetime" asp-for="product.Publishing" class="form-control" id="Company_Icon_Input" placeholder="1/1/0001 12:00:00 AM">
                 </div>
                 <div class="form-group col-md">
                     <label for="Company_Icon_Input col-sm-2 col-form-label"><span class="material-icons mx-1" style="font-size: 1rem;">image</span>Developer</label>
-                    <input type="url" asp-for="product.Developer" class="form-control" id="Company_Icon_Input" placeholder="domain.com/image.png">
+                    <input type="text" asp-for="product.Developer.Name" class="form-control" id="Company_Icon_Input" placeholder="domain.com/image.png">
                 </div>
                 <div class="form-group col-md">
                     <label for="Company_Icon_Input col-sm-2 col-form-label"><span class="material-icons mx-1" style="font-size: 1rem;">image</span>Editor</label>
-                    <input type="url" asp-for="product.Editor" class="form-control" id="Company_Icon_Input" placeholder="domain.com/image.png">
+                    <input type="text" asp-for="product.Editor.Name" class="form-control" id="Company_Icon_Input" placeholder="domain.com/image.png">
                 </div>
 
                                                 <div class="form-group col-md-2">

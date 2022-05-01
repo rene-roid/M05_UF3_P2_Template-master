@@ -50,7 +50,6 @@ namespace M05_UF3_P2_Template.App_Code.Model
             {
                 product = new Product(DatabaseManager.Select("Product", null, "Id = " + Product_Id + " ").Rows[0]);
             }
-
         }
         public Game(int Id) : this(DatabaseManager.Select("Game", null, "Id = " + Id + " ").Rows[0]) { }
 
