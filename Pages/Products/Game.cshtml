@@ -4,8 +4,34 @@
 }
 
 <form method="post">
-    <button type="submit" class="btn btn-primary float-right"><span class="material-icons">save</span></button>
+@*    <button type="submit" class="btn btn-primary float-right"><span class="material-icons">save</span></button>
     <input type="text" asp-for="game.Product_Id" />
     <input type="number" step="any" asp-for="game.Rating" />
-    <input type="text" asp-for="game.Version" />
+    <input type="text" asp-for="game.Version" />*@
+
+            <div class="form-row">
+            <div class="form-group col-md-2">
+                <label for="Company_Id_Input col-sm-2 col-form-label"><span class="material-icons mx-1" style="font-size: 1rem;">tag</span>Id</label>
+                @{
+                    string CustomId = Model.Id > 0 ? Model.Id.ToString() : null;
+                }
+                <input type="text" asp-for="game.Id" value="@CustomId" readonly class="form-control" id="Company_Id_Input" placeholder="-">
+            </div>
+            <div class="form-group col-md-5">
+                <label for="Company_Name_Input col-sm-2 col-form-label">Product ID</label>
+                <input type="number" asp-for="game.Product_Id" maxlength="50" class="form-control" placeholder="0">
+            </div>
+                            <div class="form-group col-md-2">
+                <label for="Company_Id_Input col-sm-2 col-form-label"><span class="material-icons mx-1" style="font-size: 1rem;">tag</span>Rating</label>
+
+                <input type="number" step="any" asp-for="game.Rating" class="form-control" id="Company_Id_Input" placeholder="-">
+            </div>
+        </div>  
+                            <div class="form-group col-md-2">
+                <label for="Company_Id_Input col-sm-2 col-form-label"><span class="material-icons mx-1" style="font-size: 1rem;">tag</span>Version</label>
+
+                <input type="number" step="any" asp-for="game.Version" class="form-control" id="Company_Id_Input" placeholder="-">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary float-right"><span class="material-icons">save</span></button>
 </form>
