@@ -18,8 +18,11 @@ namespace M05_UF3_P2_Template.Pages.Products
         [BindProperty]
         public Game gamee { get; set; }
 
+        public bool isGame { get; set; }
+
         public void OnGet()
         {
+            //if (!isGame) product.Type = Product.TYPE.VIDEO;
             if (Id > 0)
             {
                 product = new Product(Id);
@@ -33,8 +36,8 @@ namespace M05_UF3_P2_Template.Pages.Products
                         DatabaseManager.DB_Field[] fields = new DatabaseManager.DB_Field[]
                         {
                                 new DatabaseManager.DB_Field("Product_Id", Id),
-                                new DatabaseManager.DB_Field("Rating", gamee.Rating == null ? 0 : gamee.Rating),
-                                new DatabaseManager.DB_Field("Version", gamee.Version)
+                                new DatabaseManager.DB_Field("Rating", null),
+                                new DatabaseManager.DB_Field("Version", null)
                         };
                         Game_Id = (int)DatabaseManager.Insert("Game", fields);
                     }
