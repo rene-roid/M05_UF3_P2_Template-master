@@ -8,11 +8,11 @@ namespace M05_UF3_P2_Template.App_Code.Model
 {
     public class Game
     {
-        public int Id;
-        public int Product_Id;
+        public int Id { get; set; }
+        public int Product_Id { get; set; }
         public Product product;
-        public float Rating;
-        public string Version;
+        public float Rating { get; set; }
+        public string Version { get; set; }
 
         public Game()
         {
