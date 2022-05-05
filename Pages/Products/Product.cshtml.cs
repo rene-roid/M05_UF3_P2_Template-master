@@ -15,14 +15,29 @@ namespace M05_UF3_P2_Template.Pages.Products
         public int Game_Id { get; set; }
         [BindProperty]
         public Product product { get; set; }
+        [BindProperty]
+        public Game gamee { get; set; }
+
         public void OnGet()
         {
             if (Id > 0)
             {
                 product = new Product(Id);
-                if(product.Type == Product.TYPE.GAME)
+                if (product.Type == Product.TYPE.GAME)
                 {
-                    Game_Id = (int)DatabaseManager.Select("Game", new string[] { "Id" }, "Product_Id = " + Id + "").Rows[0][0];
+                    try
+                    {
+                        Game_Id = (int)DatabaseManager.Select("Game", new string[] { "Id" }, "Product_Id = " + Id + "").Rows[0][0];
+                    } catch
+                    {
+                        DatabaseManager.DB_Field[] fields = new DatabaseManager.DB_Field[]
+                        {
+                                new DatabaseManager.DB_Field("Product_Id", Id),
+                                new DatabaseManager.DB_Field("Rating", gamee.Rating == null ? 0 : gamee.Rating),
+                                new DatabaseManager.DB_Field("Version", gamee.Version)
+                        };
+                        Game_Id = (int)DatabaseManager.Insert("Game", fields);
+                    }
                 }
             }
         }
