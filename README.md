@@ -1,2 +1,2 @@
 # PORFAVOR MIRA ESTE VIDEO: https://youtu.be/bcTRoYn_iEw
-
+Datos a añadir: Para hacer este proyecto he utilizado la plantilla que nos diste y mis compañeros les daba un error al abrir el proyecto por que les falta la base de datos, no intentaron crear una así que no estoy seguro si creando una resolverá el problema. pero en este video explico como funciona la página web y lo que tengo. Gracias pos tu atención
